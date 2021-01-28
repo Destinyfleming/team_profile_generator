@@ -1,5 +1,4 @@
 const inquirer = require('inquirer');
-const fs = require('fs');
 
 //create questions about employees
 const questions = [  
@@ -24,10 +23,35 @@ const questions = [
 ];
 
 //create an empty array to store employees
-const employees = []
-//create functions
-//invoke functions
-getName()
-getId()
-getEmail()
-getRole()
+const employee = {
+
+    constructor(name, email, id){
+        this.name = name;
+        this.email = email;
+        this.id = id;
+    },
+    //create functions
+    //get id 
+    getID(){
+        return this.id
+    }, 
+
+    //get email 
+    getEmail(){
+        return this.email
+    }, 
+
+    //get role
+    getRole(){
+        return this.role
+    }, 
+
+    //get name
+    getName(){
+        return this.name
+    }, 
+
+}
+
+//export
+module.exports = employee

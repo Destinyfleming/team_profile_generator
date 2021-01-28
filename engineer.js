@@ -29,12 +29,41 @@ const questions = [
     },
 ];
 
-//create an empty array to store engineers
-const engineers = []
-//create functions
-//invoke functions
-getName()
-getId()
-getEmail()
-getRole()
-getGithub()
+const engineer = {
+
+    constructor(name, email, id, github){
+        this.name = name;
+        this.email = email;
+        this.id = id;
+    },
+    //create functions
+    //get id 
+    getID(){
+        return this.id
+    }, 
+
+    //get email 
+    getEmail(){
+        return this.email
+    }, 
+
+    //get role
+    getRole(){
+        return this.role
+    }, 
+
+    //get name
+    getName(){
+        return this.name
+    }, 
+
+    //get github
+    getGithub(){
+        return this.github
+    }, 
+
+
+}
+
+//export
+module.exports = engineer
