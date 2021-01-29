@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 //create questions about interns
-const questions = [  
+const internQ = [  
      //name
      {
         type: 'input',
@@ -66,3 +66,4 @@ const intern ={
 
 //export
 module.exports = intern
+module.exports = internQ

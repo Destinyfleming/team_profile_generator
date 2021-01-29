@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 //create questions about employees
-const questions = [  
+const engineerQ = [  
      //name
      {
         type: 'input',
@@ -66,4 +66,4 @@ const engineer = {
 }
 
 //export
-module.exports = engineer
+module.exports = engineer , engineerQ

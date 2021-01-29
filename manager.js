@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 //create questions about managers
-const questions = [  
+const managerQ = [  
      //name
      {
         type: 'input',
@@ -65,4 +65,4 @@ const manager ={
 }
 
 //export
-module.exports = manager
+module.exports = manager , managerQ
