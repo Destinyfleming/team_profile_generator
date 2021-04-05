@@ -46,14 +46,20 @@ function userPrompt(){
         
             default:
               return ('there has been an error');
-          }  
-    })  
+          }
+    })/*.then((response) => {
+            var readme =displayHTML(response)
+            fs.writeFile('team.html', readme, (err) =>
+           err ? console.error(err) : console.log('Success!')
+           );
+    })*/
 }
 
 //create functions
 //to write html page
-const displayHTML = (url, res) => {
-    const html = `<!DOCTYPE html>
+const displayHTML = (response) => {
+    return`
+    <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -63,21 +69,18 @@ const displayHTML = (url, res) => {
         <title>Team Profile</title>
     </head>
     <body>
-        <nav class="navbar navbar-dark bg-dark mb-5">
-            <span class="navbar-brand mb-0 h1 w-100 text-center">Team Profile</span>
-        </nav>
-        <div class="container">
-            <div class="row">`;
-    fs.writeFile("./example/team.html", html, function(err) {
-        if (err) {
-            console.log(err);
-        }
-    });
-    console.log("start");
-};
-
+    <p>hi</p>
+    </body>`
+    ;  
+}
+function A (response){
+    var readme =displayHTML(response)
+            fs.writeFile('team.html', readme, (err) =>
+           err ? console.error(err) : console.log('Success!')
+           );
+}
 function startApp(){
- displayHTML()
- userPrompt()
+ 
+ userPrompt().then(A())
 }
 startApp();
