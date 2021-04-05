@@ -1,32 +1,39 @@
 const inquirer = require('inquirer');
-//create questions about employees
-function employeeQ(){
+const fs = require('fs');
+
+function managerQ(){
     inquirer.prompt([
         {
             type: 'input',
-            message: 'enter employee name:',
+            message: 'enter manager name:',
             name: 'name',
         },
         //email
         {
             type: 'input',
-            message: 'enter employee email',
+            message: 'enter manager email',
             name: 'email',
         },   
         // employee id 
         {
             type: 'input',
-            message: 'enter employee id',
+            message: 'enter manager id',
             name: 'id',
         }, 
+        //office number
+        {
+            type: 'input',
+            message: 'enter manager office number',
+            name: 'officeNum',
+        },  
     ])
 }
 
-const employee = {
-    constructor(name, email, id){
+const manager ={
+
+    constructor(name, email, id, officeNum){
         this.name = name;
         this.email = email;
-        this.role = role;
         this.id = id;
     },
     //create functions
@@ -50,7 +57,11 @@ const employee = {
         return this.name
     }, 
 
+    //office number
+    getOffice(){
+        return this.officeNum
+    }
 }
 
 //export
-module.exports = employeeQ
+module.exports = {manager , managerQ}

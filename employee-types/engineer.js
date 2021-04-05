@@ -66,4 +66,4 @@ const engineer = {
 }
 
 //export
-module.exports = engineer , engineerQ
+module.exports = {engineer , engineerQ}

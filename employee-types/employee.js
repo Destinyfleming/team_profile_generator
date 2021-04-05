@@ -1,44 +1,34 @@
 const inquirer = require('inquirer');
-const fs = require('fs');
-
-//create questions about interns
-function internQ(){
+//create questions about employees
+function employeeQ(){
     inquirer.prompt([
         {
             type: 'input',
-            message: 'enter intern name:',
+            message: 'enter employee name:',
             name: 'name',
         },
         //email
         {
             type: 'input',
-            message: 'enter intern email',
+            message: 'enter employee email',
             name: 'email',
         },   
-        // intern id 
+        // employee id 
         {
             type: 'input',
-            message: 'enter intern id',
+            message: 'enter employee id',
             name: 'id',
-        },   
-        //school
-        {
-            type: 'input',
-            message: 'enter interns school',
-            name: 'school',
-        }
+        }, 
     ])
-}
-
-
-const intern ={
-    
-    constructor(name, email, id, school){
+} 
+const employee = {
+    constructor(name, email, id){
         this.name = name;
         this.email = email;
+        this.role = role;
         this.id = id;
     },
-    //create functions
+    
     //get id 
     getID(){
         return this.id
@@ -58,14 +48,8 @@ const intern ={
     getName(){
         return this.name
     }, 
-    
-    //get school
-    getSchool(){
-        return this.school
-    }
 
 }
 
 //export
-module.exports = intern
-module.exports = internQ
+module.exports = {employeeQ, employee}

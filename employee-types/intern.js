@@ -1,37 +1,39 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-function managerQ(){
+//create questions about interns
+function internQ(){
     inquirer.prompt([
         {
             type: 'input',
-            message: 'enter manager name:',
+            message: 'enter intern name:',
             name: 'name',
         },
         //email
         {
             type: 'input',
-            message: 'enter manager email',
+            message: 'enter intern email',
             name: 'email',
         },   
-        // employee id 
+        // intern id 
         {
             type: 'input',
-            message: 'enter manager id',
+            message: 'enter intern id',
             name: 'id',
-        }, 
-        //office number
+        },   
+        //school
         {
             type: 'input',
-            message: 'enter manager office number',
-            name: 'officeNum',
-        },  
+            message: 'enter interns school',
+            name: 'school',
+        }
     ])
 }
 
-const manager ={
 
-    constructor(name, email, id, officeNum){
+const intern ={
+    
+    constructor(name, email, id, school){
         this.name = name;
         this.email = email;
         this.id = id;
@@ -56,12 +58,13 @@ const manager ={
     getName(){
         return this.name
     }, 
-
-    //office number
-    getOffice(){
-        return this.officeNum
+    
+    //get school
+    getSchool(){
+        return this.school
     }
+
 }
 
 //export
-module.exports = manager , managerQ
+module.exports = {internQ, intern}
