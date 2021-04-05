@@ -2,32 +2,34 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 //create questions about interns
-const internQ = [  
-     //name
-     {
-        type: 'input',
-        message: 'enter intern name:',
-        name: 'name',
-    },
-    //email
-    {
-        type: 'input',
-        message: 'enter intern email',
-        name: 'email',
-    },   
-    // intern id 
-    {
-        type: 'input',
-        message: 'enter intern id',
-        name: 'id',
-    },   
-    //school
-    {
-        type: 'input',
-        message: 'enter interns school',
-        name: 'school',
-    },
-];
+function internQ(){
+    inquirer.prompt([
+        {
+            type: 'input',
+            message: 'enter intern name:',
+            name: 'name',
+        },
+        //email
+        {
+            type: 'input',
+            message: 'enter intern email',
+            name: 'email',
+        },   
+        // intern id 
+        {
+            type: 'input',
+            message: 'enter intern id',
+            name: 'id',
+        },   
+        //school
+        {
+            type: 'input',
+            message: 'enter interns school',
+            name: 'school',
+        }
+    ])
+}
+
 
 const intern ={
     

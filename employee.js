@@ -1,28 +1,28 @@
-
+const inquirer = require('inquirer');
 //create questions about employees
-const employeeQ = [ 
-     //name
-     {
-        type: 'input',
-        message: 'enter employee name:',
-        name: 'name',
-    },
-    //email
-    {
-        type: 'input',
-        message: 'enter employee email',
-        name: 'email',
-    },   
-    // employee id 
-    {
-        type: 'input',
-        message: 'enter employee id',
-        name: 'id',
-    },   
-];
+function employeeQ(){
+    inquirer.prompt([
+        {
+            type: 'input',
+            message: 'enter employee name:',
+            name: 'name',
+        },
+        //email
+        {
+            type: 'input',
+            message: 'enter employee email',
+            name: 'email',
+        },   
+        // employee id 
+        {
+            type: 'input',
+            message: 'enter employee id',
+            name: 'id',
+        }, 
+    ])
+}
 
 const employee = {
-
     constructor(name, email, id){
         this.name = name;
         this.email = email;
@@ -53,5 +53,4 @@ const employee = {
 }
 
 //export
-module.exports = employee
 module.exports = employeeQ

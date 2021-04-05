@@ -1,43 +1,47 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const jest = require("jest");
-const engineer = require("./engineer.js");
-const intern = require("./intern.js");
-const manager = require("./manager.js");
-const employee = require("./employee.js");
-
+const engineerQ = require("./engineer.js");
+const internQ = require("./intern.js");
+const managerQ = require("./manager.js");
+const employeeQ = require("./employee.js");
 
 //create an empty array to store employees
 const employees = []
 
-
 //prompt user
 function userPrompt(){
-    inquirer.prompt([
+    return inquirer.prompt([
         {
          type: "list",
          name: "role",
          message: "what is your role?",
-         choices: ['engineer', 'intern', 'manager', 'employee']
-        },
+         choices: [
+             'engineer',
+              'intern', 
+              'manager', 
+              'employee'
+            ]},
     ]).then(function (res) {
-
-        switch (res) {
-            case (res.role === employee):
-              console.log('new employee')
-              return inquirer.prompt([employeeQ])
+        switch (res.role) {
+            case ('employee'):
+            console.log('new employee')
+              employeeQ
+              break;
               
-            case (res.role === intern):
+            case ('intern'):
                 console.log('new intern')
-                return inquirer.prompt([internQ])
+                internQ()
+                break;
 
-            case (res.role === engineer):
+            case ('engineer'):
                 console.log('new engineer')
-                return inquirer.prompt([engineerQ])
+                engineerQ()
+                break;
             
-            case (res.role === manager):
+            case ('manager'):
                 console.log('new manager')
-                return inquirer.prompt([managerQ])
+                managerQ()
+                break;
         
             default:
               return ('there has been an error');
@@ -63,21 +67,9 @@ const displayHTML = (url, res) => {
     res.end(myHTML);
 };
 
-
-
-
-
-
-userPrompt()
-
-
-
-
-
-
 //invoke functions
 /*getName()
 getId()
 getEmail()
 getRole()*/
-userPrompt()
+ userPrompt()

@@ -1,33 +1,33 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-//create questions about employees
-const engineerQ = [  
-     //name
-     {
-        type: 'input',
-        message: 'enter employee name:',
-        name: 'name',
-    },
-    //email
-    {
-        type: 'input',
-        message: 'enter employee email',
-        name: 'email',
-    },   
-    // employee id 
-    {
-        type: 'input',
-        message: 'enter employee id',
-        name: 'id',
-    },   
-    //github
-    {
-        type: 'input',
-        message: 'enter employee github',
-        name: 'github',
-    },
-];
+function engineerQ(){
+    inquirer.prompt([
+        {
+            type: 'input',
+            message: 'enter employee name:',
+            name: 'name',
+        },
+        //email
+        {
+            type: 'input',
+            message: 'enter employee email',
+            name: 'email',
+        },   
+        // employee id 
+        {
+            type: 'input',
+            message: 'enter employee id',
+            name: 'id',
+        },   
+        //github
+        {
+            type: 'input',
+            message: 'enter employee github',
+            name: 'github',
+        },
+    ])
+}
 
 const engineer = {
 
